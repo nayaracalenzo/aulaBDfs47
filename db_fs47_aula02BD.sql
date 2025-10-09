@@ -133,3 +133,7 @@ UPDATE produtos SET categoria = 'cosmetico' WHERE id = 6;
 UPDATE produtos SET categoria = 'utilitario' WHERE id = 4;
 
 -- faça uma consulta contando quantos itens tem em cada categoria (group by)
+SELECT categoria, COUNT(*) AS total_itens FROM produtos GROUP BY categoria;
+
+-- na mesma consulta retorne apenas os que possuem mais de um item (having)
+SELECT categoria, COUNT(*) AS total_itens FROM produtos GROUP BY categoria HAVING COUNT(*) > 1;
